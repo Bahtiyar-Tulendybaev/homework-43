@@ -139,10 +139,7 @@ public class Main {
         String htmlContent = Files.readString(Paths.get("homework/index.html"));
         String cssContent = Files.readString(Paths.get("homework/css/forms.css"));
         htmlContent = htmlContent.replaceFirst("<head>", "<head><style>" + cssContent + "</style>");
-      //  byte[] imageBytes = Files.readAllBytes(Paths.get("homework/images/1.jpg"));
-      //  String base64Image = Base64.getEncoder().encodeToString(imageBytes);
-     //   htmlContent.replaceFirst("<img src=\"/images/1.jpg\" alt=\"coins\" style=\"display:block; width: 200px; height: 200px;\">", "<body><img src=\"data:image/png;base64," + base64Image + "\">");
-        try {
+             try {
             exchange.getResponseHeaders().add("Content-Type", "text/html");
             int responseCode = 200;
             int length = 0;
